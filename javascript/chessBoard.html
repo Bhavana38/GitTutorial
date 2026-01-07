@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+       /* ChessBoard*/
+        .box{
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        }
+        
+        .black{
+            background-color: black;
+        }
+
+        .white{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<input type="button" onclick="createChessBoard()"
+    style="background-color: blue; height: 50px; width: 100px; border-radius: 50%; border: 20px; margin: 20px; color: white" value="CLICK ME"/>
+    <div id="root" style="display: grid; grid-template-columns: repeat(8, 100px); height: 800px; width: 800px;"></div>
+    <script>
+        let createChessBoard = () =>{
+            let root = document.querySelector('#root')
+
+            let box
+            let isBlack = false;
+            for(let i=0; i < 64; i++){
+                box = document.createElement('div')
+                box.classList.add('box')
+
+                if(isBlack){
+                    box.classList.add('black')
+                }else{
+                    box.classList.add('white')
+                }
+
+                isBlack = !isBlack
+                if((i + 1) % 8 == 0){
+                    isBlack = !isBlack
+                }
+                root.appendChild(box)
+            }
+        }   
+    </script>
+</body>
+</html>

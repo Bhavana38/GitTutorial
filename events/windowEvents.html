@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px; /* for scroll event */
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        h2 {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: lightblue;
+            padding: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+  <p id="msg"></p>
+
+    <button id="btn">CLICK ME</button>
+
+
+    <script>
+        let msg = document.getElementById("msg");
+
+        // Page load event
+        window.addEventListener("load", () => {
+            let msg = 
+            msg.innerText = "Page fully loaded";
+        });
+
+        // Window resize event
+        window.addEventListener("resize", () => {
+            msg.innerText = "Window resized";
+        });
+    </script>
+</body>
+</html>

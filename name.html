@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="name.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Contact</h1>
+
+    <form>
+
+        <label>First name</label>
+        <input type="text">
+
+        <label>Last name</label>
+        <input type="text">
+
+        <label>Phone</label>
+        <input type="text">
+
+        <label>Date and time</label>
+
+        <div class="date-row">
+            <div>
+                <label>Day</label>
+                <input type="number">
+            </div>
+
+            <div>
+                <label>Month</label>
+                <select name="months" id="months">
+                    <option value=""></option>
+                    <option value="Jan">January</option>
+                    <option value="Feb">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="Aug">August</option>
+                    <option value="Sept">September</option>
+                    <option value="Oct">October</option>
+                    <option value="Nov">November</option>
+                    <option value="Dec">December</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Year</label>
+                <input type="number">
+            </div>
+
+            <div>
+                <label>Time</label>
+                <input type="time">
+            </div>
+        </div>
+
+        <label>Seating preference</label>
+
+        <div class="radio-group">
+            <label><input type="radio" name="seat" > Indoor </label>  
+            <label><input type="radio" name="seat" > Outdoor </label>
+        </div>
+
+        <label>Additional requests</label>
+        <input type="text">
+
+        <label class="checkbox">
+            <input type="checkbox">
+            Yes, subscribe me to your newsletter.
+        </label>
+
+        <button>Request booking</button>
+
+    </form>
+</div>
+</body>
+</html>
