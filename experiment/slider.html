@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Slider</title>
+
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+    }
+
+    .slider {
+        position: relative;
+        width: 400px;
+        height: 250px;
+        background: #ff9a9a;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 80px;
+        color: white;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .btn {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        background: #333;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn.left {
+        left: -20px;
+    }
+
+    .btn.right {
+        right: -20px;
+    }
+
+    .btn:hover {
+        background: #555;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="slider">
+    <button class="btn left" onclick="prevSlide()">&#9664;</button>
+    <div id="slideNumber">1</div>
+    <button class="btn right" onclick="nextSlide()">&#9654;</button>
+</div>
+
+<script>
+    let currentSlide = 1;
+    const totalSlides = 5;
+
+    function updateSlide() {
+        document.getElementById("slideNumber").textContent = currentSlide;
+    }
+
+    function nextSlide() {
+        if (currentSlide < totalSlides) {
+            currentSlide++;
+        } else {
+            currentSlide = 1;
+        }
+        updateSlide();
+    }
+
+    function prevSlide() {
+        if (currentSlide > 1) {
+            currentSlide--;
+        } else {
+            currentSlide = totalSlides;
+        }
+        updateSlide();
+    }
+</script>
+
+</body>
+</html>

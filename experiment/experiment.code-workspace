@@ -12,5 +12,8 @@
 		{
 			"path": "../My Portfolio"
 		}
-	]
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "experiment"
+	}
 }

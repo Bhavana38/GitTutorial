@@ -2,257 +2,130 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
-}
-html{
-    height: 100%;
-    overflow: visible;
+    font-family: "poppins", sans-serif;
 }
 body{
-    background: #1b1b1b;
+    background: black;
     color: #fff;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
-nav {
-    width: 100%;
-    position: sticky;
-    top: 0;
-    background: #1b1b1b;
-    z-index: 10;
-}
-.navlist {
+.navbar {
     display: flex;
-    gap: 35px;
-    justify-content: center;
-    padding: 20px;
-    list-style: none;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background: #1b1b1b;
-    z-index: 10;
-}
-
-.navlist li a {
-    text-decoration: none;
-    font-size: 18px;
-    color: #fff;
-    position: relative;
-}
-
-.navlist li a::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: #fff;
-    left: 0;
-    bottom: -5px;
-    transform: scaleX(0);
-    transition: 0.4s ease;
-}
-
-.navlist li a:hover::after{
-    transform: scaleX(1);
-}
-
-section {
-    width: 100%;
-    padding: 120px 2rem 80px;
-    min-height: 100vh;
-}
-
-#home{
-    display: block;
-}
-
-.portfolio-container {
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 60px;
     align-items: center;
-    text-align: center;
 }
-
-.right-container {
+.navbar .nav-links {
     display: flex;
-    justify-content: center;
+    list-style: none;
 }
 
-.design {
-    position: relative;
-    width: 170px;
-    height: 200px;
+.navbar .nav-links li {
+    margin-left: 35px;
+}
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #c9dfff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.navbar .nav-links a:hover {
+    color: #56baf9;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+    height: 80vh;
+}
+.content-text {
+    max-width: 45%;
+}
+.content-text .intro {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.content-text .intro span {
+    color: #57bffc;
+}
+.content-text h1 {
+    font-size: 55px;
+    color: #55b2ff;
     margin-bottom: 20px;
 }
 
-.circle{
+.content-text .detail {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #d1e9ff;
+}
+
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+    border: 2px solid #55b2ff;
+    transition: 0.3s;
+}
+
+.btn.hire {
+    background: black;
+    color: #55b2ff;
+}
+.btn.hire:hover {
+    background: #55b2ff;
+    color: black;
+}
+
+.btn.view {
+    background: #55b2ff;
+    color: black;
+}
+
+.btn.view:hover {
+    background: transparent;
+    color: #55b2ff;
+}
+.picture {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.glow-circle {
+    width: 350px;
+    height: 350px;
+    border-radius: 10%;
+    background: linear-gradient(circle, #000000 40%, #15324e 100%);
+    position: relative;
+}
+.glow-circle::before {
+    content: "";
     position: absolute;
+    width: 290px;
+    height: 290px;
     border-radius: 50%;
+    border: 8px solid #d4f3ff;
+    box-shadow: 0 0 25px #c8f3ff, 0 0 40px #7dd2ff, inset 0 0 20px #8ee2ff;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-.outer{
-    width: 150px;
-    height: 150px;
-}
-
-.inner{
-    width: 150px;
-    height: 150px;
-    background-image: url("images/bhuvi.jpg");
-    background-size: cover;
-    background-position: center;
-    border: 5px solid #fff;
-
-    box-shadow:
-        0 0 1rem #fff,
-        inset 0 0 1rem #fff,
-}
-.left-container {
-    max-width: 600px;
-}
-
-.intro {
-    font-size: 1.5rem;
-    margin-top: 0;
-    padding-top: 0;
-}
-
-.intro span {
-    color: #5DB9EE;
-}
-
-h1 {
-    font-size: 4rem;
-    color: #5DB9EE;
-}
-
-.detail {
-    margin-top: 1rem;
-    color: #ccc;
-    line-height: 1.7rem;
-}
-
-.btn-container {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.btn {
-    padding: 0.8rem 1.6rem;
-    font-size: 1.1rem;
-    border-radius: 50px;
-    cursor: pointer;
-    border: 2px solid #5DB9EE;
-    background: transparent;
-    color: #5DB9EE;
-    transition: 0.4s;
-}
-
-.project{
-    background: #5DB9EE;
-    color: #1b1b1b;
-}
-.project:hover {
-    background: transparent;
-    color: #5DB9EE;
-}
-.hire {
-    background: transparent;
-    color: #5DB9EE;
-}
-
-.hire:hover {
-    background: #5DB9EE;
-    color: #1b1b1b;
-}
-.page-text{
-    max-width:850px;
-    line-height:1.8rem;
-    font-size:20px;
-}
-
-table{
-    border-collapse:collapse;
-    margin-top:20px;
-    width:70%;
-    background:#222;
-}
-
-th,td{
-    border:2px solid #5DB9EE;
-    padding:12px;
-    text-align:center;
-}
-
-th{
-    background:#5DB9EE;
-    color:#1b1b1b;
-}
-@media (min-width: 600px) and (max-width: 900px){
-    .portfolio-container{
-        background-color: white;
-        flex-direction: column;
-        text-align: center;
-    }
-    .left-container, .right-container{
-        width: 100%;
-        padding-left: 0;
-    }
-    h1{
-        font-size: 3rem;
-    }
-}
-.contact-form {
-    margin-top: 30px;
-    max-width: 500px;
-    background: #222;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255,255,255,0.1);
-}
-
-.contact-form h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #5DB9EE;
-    text-align: center;
-}
-
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 12px;
-    border-radius: 30px;
-    border: 2px solid #5DB9EE;
-    background: transparent;
-    color: white;
-    font-size: 16px;
-}
-
-.contact-form textarea {
-    height: 120px;
-    resize: none;
-}
-.submit-btn {
-    background: #5DB9EE !important;
-    color: #1b1b1b !important;
-    border: none !important;
-    font-weight: bold;
-}
-
-.submit-btn:hover {
-    background: transparent !important;
-    border: 2px solid #5DB9EE !important;
-    color: #5DB9EE !important;
+.circle-img {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit:fill;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
